@@ -1,13 +1,15 @@
+import matplotlib.pyplot as plt
+
 def plot_predictions(actual, predicted):
-    plt.figure(figsize=(12,6))
 
-    plt.plot(actual, label="Actual Price", color="blue")
-    plt.plot(predicted, label="Predicted Price", color="red")
+    plt.figure(figsize=(10,5))
 
-    plt.title("LSTM Stock Price Prediction")
+    plt.plot(actual, label="Actual Price")
+    plt.plot(predicted, label="Predicted Price")
+
+    plt.title("Stock Price Prediction using LSTM")
     plt.xlabel("Time")
-    plt.ylabel("Stock Price")
-    plt.legend()
-    plt.grid(True)
+    plt.ylabel("Price")
 
+    plt.legend()
     plt.show()
