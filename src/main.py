@@ -19,12 +19,14 @@ model.fit(
 
 predictions = model.predict(X_test)
 
-# Convert back to original stock prices
+# Convert scaled values back to original stock prices
 predictions = scaler.inverse_transform(predictions)
-actual = scaler.inverse_transform(y_test)
+actual = scaler.inverse_transform(y_test.reshape(-1, 1))
 
 evaluate_model(actual, predictions)
 
 plot_predictions(actual, predictions)
 
 model.save("lstm_model.h5")
+
+print("Model saved successfully!")
