@@ -5,7 +5,7 @@ data = load_stock_data()
 
 X, y, scaler = preprocess_data(data)
 
-model = build_model((X.shape[1],1))
+model = build_model((X.shape[1], X.shape[2]))
 
 model.fit(X, y, epochs=10, batch_size=32)
 
